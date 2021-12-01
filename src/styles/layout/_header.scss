@@ -1,0 +1,23 @@
+@import "./../abstracts/variables";
+
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $primary-color;
+  width: 100%;
+  padding: 1rem 2rem;
+
+  > * {
+    place-self: center;
+  }
+
+  .icon-logo {
+    width: 4rem;
+  }
+
+  .icon-cart {
+    width: 3rem;
+  }
+}

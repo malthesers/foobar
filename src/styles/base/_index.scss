@@ -1,0 +1,11 @@
+@import "./../abstracts/variables";
+@import "typography";
+
+body {
+  background-color: $primary-color;
+  margin: 0;
+}
+
+main {
+  padding-top: 10rem;
+}

@@ -1,0 +1,35 @@
+.beer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    img {
+      padding: 1rem 2rem;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  .beer-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+    padding: 2.5rem;
+  }
+}
