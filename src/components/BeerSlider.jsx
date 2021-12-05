@@ -69,7 +69,7 @@ export default function BeerSlider (props) {
     slideRef.current.slickGoTo(slideIndex);
   }, [slideIndex])
 
-  const mappedBeers = props.props.map(beer => <BeerItemSlide {...beer} key={beer.name} />)
+  const mappedBeers = props.props.map(beer => <BeerItemSlide {...beer} basket={props.basket} setBasket={props.setBasket} key={beer.index} />)
 
   return (
     <section id="section-slider" className="slide-hidden">

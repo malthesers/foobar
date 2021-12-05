@@ -13,7 +13,7 @@ export default function propsItem (props) {
             <h3>{props.name}</h3>
             <p>{props.category} - {props.alc}%</p>
             <p>{props.price} DKK</p>
-            <ButtonAmount props={props} />
+            <ButtonAmount name={props.name} index={props.index} basket={props.basket} setBasket={props.setBasket} />
             <button onClick={ () => { displaySlider(); props.setSlideIndex(props.index) } }>Read more</button>
         </article>
     )

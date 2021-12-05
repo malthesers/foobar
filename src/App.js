@@ -24,6 +24,7 @@ function App() {
   const [beers, setBeers] = useState([]);
   const [basket, setBasket] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
+  let isFetched = basket.length === 7;
 
   useEffect(() => {
     fetch("https://group-7-foo-bar.herokuapp.com/beertypes")
@@ -53,16 +54,31 @@ function App() {
 
         //Set reformatted beers as state
         setBeers(pricedBeers);
+
+        //Create basket template
+        const filteredBasket = filteredBeers.map((item) => {
+          const basketItem = {
+            name: item.name,
+            amount: 0,
+          };
+
+          return basketItem;
+        });
+
+        //Set basket as state
+        setBasket(filteredBasket);
       });
   }, []);
 
   return (
     <>
       <Header />
-      <main>
-        <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSlideIndex={setSlideIndex} />
-        <BeerSlider props={beers} basket={basket} setBasket={setBasket} slideIndex={slideIndex} />
-      </main>
+      {isFetched && (
+        <main>
+          <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSlideIndex={setSlideIndex} />
+          <BeerSlider props={beers} basket={basket} setBasket={setBasket} slideIndex={slideIndex} />
+        </main>
+      )}
     </>
   );
 }
