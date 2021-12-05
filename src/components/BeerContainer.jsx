@@ -1,20 +1,15 @@
 import BeerItem from "./BeerItem";
 
 export default function BeerContainer (props) {
-    const beersToInclude = ["El Hefe", "Fairy Tale Ale", "GitHop", "Hollaback Lager", "Hoppily Ever After", "Mowintime", "Sleighride"];
-    const filteredBeers = props.props.filter(beer => {
-        return beersToInclude.some(inclBeer => {
-            return inclBeer === beer.name ? true : false;
-        })
-    })
-    const mappedBeers = filteredBeers.map(beer => <BeerItem {...beer} key={beer.name} />)
-
+    const mappedBeers = props.props.map(beer => <BeerItem {...beer} basket={props.basket} setBasket={props.setBasket} setSlideIndex={props.setSlideIndex} key={beer.name} />)
     return (
         <section id="section-beers">
-            <p>How?</p>
-            <p>On this page you can shuffle around and see the different beers. If you are curious about the individual beer then click on it and see what happens!</p>
+            <div className="beer-header">
+                <h4>How?</h4>
+                <p>On this page you can shuffle around and see the different beers. If you are curious about the individual beer then click on it and see what happens!</p>
+            </div>
             <div className="beer-container">
-                {mappedBeers}
+               {mappedBeers}
             </div>
         </section>
     )

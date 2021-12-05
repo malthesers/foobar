@@ -1,13 +1,20 @@
 import ButtonAmount from "./ButtonAmount"
 
-export default function BeerItem (beer) {
+function displaySlider() {
+    const slideContainer = document.querySelector("#section-slider");
+
+    slideContainer.classList.contains("slide-hidden") ? slideContainer.classList.remove("slide-hidden") : slideContainer.classList.add("slide-hidden");
+}
+
+export default function propsItem (props) {
     return (
         <article>
-            <img src={`./images/beers/${beer.label}`} alt={beer.description.overallImpression}/>
-            <h3>{beer.name}</h3>
-            <p>{beer.category} - {beer.alc}%</p>
-            <ButtonAmount />
-            <button>Read more</button>
+            <img src={`./images/beers/${props.label}`} alt={props.description.overallImpression}/>
+            <h3>{props.name}</h3>
+            <p>{props.category} - {props.alc}%</p>
+            <p>{props.price} DKK</p>
+            <ButtonAmount props={props} />
+            <button onClick={ () => { displaySlider(); props.setSlideIndex(props.index) } }>Read more</button>
         </article>
     )
 }

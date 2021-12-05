@@ -1,4 +1,5 @@
-export default function ButtonAmount () {
+export default function ButtonAmount (props) {
+    console.log(props)
     return (
         <button className="button-amount">
             <span>-</span>

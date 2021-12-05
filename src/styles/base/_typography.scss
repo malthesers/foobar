@@ -21,9 +21,19 @@ h3 {
   color: $font-color;
 }
 
+h4 {
+  font-size: 1rem;
+  font-family: $header-font;
+  font-weight: $black;
+  color: $font-color;
+  margin-block: 0.5rem;
+  text-transform: uppercase;
+}
+
 p {
   font-size: 1rem;
   font-family: $body-font;
   font-weight: $regular;
   color: $font-color;
+  margin-block: 0.5rem;
 }
