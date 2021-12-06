@@ -1,7 +1,7 @@
 import ButtonAmount from "./ButtonAmount"
 
 function displaySlider() {
-    const slideContainer = document.querySelector("#section-slider");
+    const slideContainer = document.querySelector("#modal-slider");
 
     slideContainer.classList.contains("slide-hidden") ? slideContainer.classList.remove("slide-hidden") : slideContainer.classList.add("slide-hidden");
 }

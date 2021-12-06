@@ -72,7 +72,7 @@ export default function BeerSlider (props) {
   const mappedBeers = props.props.map(beer => <BeerItemSlide {...beer} basket={props.basket} setBasket={props.setBasket} key={beer.index} />)
 
   return (
-    <section id="section-slider" className="slide-hidden">
+    <section id="modal-slider" className="slide-hidden">
     <Slider {...settings} ref={slideRef}>
         {mappedBeers}
     </Slider>

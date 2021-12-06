@@ -13,3 +13,7 @@ main {
   max-width: 1000px;
   overflow: hidden;
 }
+
+.slide-hidden {
+  transform: translateX(100%);
+}

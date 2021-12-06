@@ -1,0 +1,102 @@
+@import "./../abstracts/variables";
+
+#modal-basket {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: $primary-color;
+  transition-duration: 0.3s;
+
+  .basket-inner {
+    padding-top: 7rem;
+    padding-inline: 2rem;
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: $primary-light;
+      margin-block: 1rem;
+    }
+
+    .basket-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      grid-gap: 1rem;
+
+      .basket-item-left {
+        display: flex;
+        grid-gap: 1rem;
+
+        .basket-item-image {
+          display: flex;
+          width: 5rem;
+          height: 5rem;
+
+          img {
+            height: 100%;
+            width: auto;
+            margin: 0 auto;
+          }
+        }
+
+        .basket-item-header {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          grid-gap: 0.3rem;
+          place-self: center;
+
+          .basket-item-name {
+            font-family: $header-font;
+            font-weight: $black;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin: 0;
+          }
+
+          .basket-item-type {
+            font-family: $body-font;
+            font-weight: $regular;
+            font-size: 0.8rem;
+            margin: 0;
+          }
+
+          .basket-item-alc {
+            font-family: $body-font;
+            font-weight: $regular;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin: 0;
+          }
+
+          .button-amount {
+            width: 8rem;
+            padding: 0.5rem 0;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    .basket-checkout {
+      .basket-total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h4 {
+          line-height: 2rem;
+        }
+      }
+
+      button {
+        background-color: $secondary-color;
+        color: $primary-color;
+        width: 100%;
+      }
+    }
+  }
+}

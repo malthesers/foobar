@@ -1,6 +1,7 @@
 import "./App.scss";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Basket from "./components/Basket";
 import BeerContainer from "./components/BeerContainer";
 import BeerSlider from "./components/BeerSlider";
 
@@ -21,6 +22,7 @@ function filterBeers(data) {
 }
 
 function App() {
+  const [basketDisplay, setBasketDisplay] = useState(false);
   const [beers, setBeers] = useState([]);
   const [basket, setBasket] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -72,11 +74,12 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header basketDisplay={basketDisplay} setBasketDisplay={setBasketDisplay} />
       {isFetched && (
         <main>
           <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSlideIndex={setSlideIndex} />
           <BeerSlider props={beers} basket={basket} setBasket={setBasket} slideIndex={slideIndex} />
+          <Basket basketDisplay={basketDisplay} basket={basket} setBasket={setBasket} />
         </main>
       )}
     </>
