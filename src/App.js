@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Basket from "./components/Basket";
 import BeerContainer from "./components/BeerContainer";
 import BeerSlider from "./components/BeerSlider";
+import OrderHandler from "./components/OrderHandler";
 
 function filterBeers(data) {
   //Const of included beers
@@ -23,6 +24,8 @@ function filterBeers(data) {
 
 function App() {
   const [basketDisplay, setBasketDisplay] = useState(false);
+  const [sliderDisplay, setSliderDisplay] = useState(false);
+  const [orderDisplay, setOrderDisplay] = useState(false);
   const [beers, setBeers] = useState([]);
   const [basket, setBasket] = useState([]);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -56,11 +59,15 @@ function App() {
 
         //Set reformatted beers as state
         setBeers(pricedBeers);
-
         //Create basket template
-        const filteredBasket = filteredBeers.map((item) => {
+        const filteredBasket = pricedBeers.map((item) => {
           const basketItem = {
+            index: item.index,
             name: item.name,
+            category: item.category,
+            alc: item.alc,
+            label: item.label,
+            price: item.price,
             amount: 0,
           };
 
@@ -74,12 +81,21 @@ function App() {
 
   return (
     <>
-      <Header basketDisplay={basketDisplay} setBasketDisplay={setBasketDisplay} />
+      <Header orderDisplay={orderDisplay} basket={basket} basketDisplay={basketDisplay} setBasketDisplay={setBasketDisplay} />
       {isFetched && (
         <main>
-          <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSlideIndex={setSlideIndex} />
-          <BeerSlider props={beers} basket={basket} setBasket={setBasket} slideIndex={slideIndex} />
-          <Basket basketDisplay={basketDisplay} basket={basket} setBasket={setBasket} />
+          <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSliderDisplay={setSliderDisplay} setSlideIndex={setSlideIndex} />
+          <BeerSlider
+            props={beers}
+            basket={basket}
+            setBasket={setBasket}
+            sliderDisplay={sliderDisplay}
+            setSliderDisplay={setSliderDisplay}
+            setBasketDisplay={setBasketDisplay}
+            slideIndex={slideIndex}
+          />
+          <Basket basketDisplay={basketDisplay} basket={basket} setBasket={setBasket} setOrderDisplay={setOrderDisplay} />
+          {orderDisplay && <OrderHandler orderDisplay={orderDisplay} setOrderDisplay={setOrderDisplay} />}
         </main>
       )}
     </>

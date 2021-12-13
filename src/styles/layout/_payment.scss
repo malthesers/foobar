@@ -1,0 +1,167 @@
+@import "./../abstracts/variables";
+
+#modal-payment {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: $primary-color;
+  transition-duration: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .modal-payment-content {
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+
+    input:focus-visible {
+      outline: none;
+    }
+
+    .modal-payment-content-selector {
+      .modal-payment-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+
+        .modal-payment-option {
+          display: flex;
+          padding: 1rem;
+          border-radius: 1rem;
+          place-content: center;
+
+          .modal-payment-option-image {
+            max-width: 10rem;
+          }
+
+          &.active-payment {
+            border: 2px solid white;
+          }
+        }
+      }
+    }
+
+    .modal-payment-mobile-pay {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 5px;
+
+      * {
+        color: #504678;
+      }
+
+      h3 {
+        font-weight: $bold;
+        margin-block: 1.5rem;
+      }
+
+      form {
+        input {
+          font-family: $header-font;
+          font-weight: $bold;
+          font-size: 1.3rem;
+          border: 2px solid $primary-light;
+          border-radius: 5px;
+          width: 100%;
+          padding: 0.7rem;
+        }
+
+        input:valid {
+          border-color: green;
+        }
+
+        input:invalid {
+          border-color: red;
+        }
+      }
+
+      button {
+        font-family: $header-font;
+        font-weight: $bold;
+        font-size: 1.3rem;
+        color: $font-color;
+        background-color: #5a78ff;
+        border: none;
+        width: 100%;
+        max-width: none;
+        padding: 0.7rem;
+        margin-block: 1.5rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .modal-payment-credit-card {
+      form {
+        .modal-payment-form-group {
+          margin-block: 2rem;
+
+          label {
+            display: block;
+            font-family: $header-font;
+            font-weight: $regular;
+            color: $font-color;
+            text-align: left;
+          }
+
+          input {
+            display: block;
+            font-family: $header-font;
+            font-size: 1rem;
+            color: $font-color;
+            background-color: $primary-color;
+            border: none;
+            border-bottom: 2px solid $font-color;
+            text-align: left;
+            width: 100%;
+            padding-block: 0.5rem;
+            margin-top: 0.5rem;
+            transition-duration: 0.3s;
+          }
+
+          input:valid {
+            border-color: green;
+          }
+
+          input:invalid:not(:placeholder-shown) {
+            border-color: red;
+          }
+        }
+
+        .modal-payment-form-bottom {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 1rem;
+
+          .modal-payment-form-group {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-payment-buttons {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      margin: 0;
+      max-width: 5rem;
+
+      img {
+        width: 2rem;
+      }
+    }
+
+    .continue-button {
+      color: $primary-color;
+      background-color: $secondary-color;
+      max-width: none;
+    }
+  }
+}

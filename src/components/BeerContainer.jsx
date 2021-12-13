@@ -1,7 +1,7 @@
 import BeerItem from "./BeerItem";
 
 export default function BeerContainer (props) {
-    const mappedBeers = props.props.map(beer => <BeerItem {...beer} basket={props.basket} setBasket={props.setBasket} setSlideIndex={props.setSlideIndex} key={beer.name} />)
+    const mappedBeers = props.props.map(beer => <BeerItem {...beer} basket={props.basket} setBasket={props.setBasket} setSliderDisplay={props.setSliderDisplay} setSlideIndex={props.setSlideIndex} key={beer.name} />)
     return (
         <section id="section-beers">
             <div className="beer-header">

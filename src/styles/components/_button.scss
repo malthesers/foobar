@@ -11,6 +11,12 @@ button {
   margin-top: 1rem;
   cursor: pointer;
   transition-duration: 0.3s;
+  text-transform: uppercase;
+}
+
+.button-fill {
+  background-color: $secondary-color;
+  color: $primary-color;
 }
 
 // button:hover {
@@ -26,11 +32,5 @@ button {
   > * {
     flex: 1;
     padding: 1rem;
-  }
-}
-
-@media (min-width: 650px) {
-  button {
-    font-size: 1.3rem;
   }
 }

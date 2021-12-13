@@ -3,7 +3,6 @@
 header {
   position: fixed;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   background-color: $primary-color;
   width: 100vw;
@@ -11,14 +10,21 @@ header {
   z-index: 5;
 
   > * {
-    place-self: center;
-  }
+    position: relative;
+    display: flex;
+    cursor: pointer;
 
-  .icon-logo {
-    width: 4rem;
-  }
+    img {
+      width: 4rem;
+    }
 
-  .icon-cart {
-    width: 3rem;
+    .icon-cart-length {
+      font-family: $header-font;
+      font-weight: $bold;
+      position: absolute;
+      left: 63%;
+      top: 30%;
+      transform: translateX(-50%);
+    }
   }
 }

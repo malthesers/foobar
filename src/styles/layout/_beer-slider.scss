@@ -84,55 +84,89 @@
     .slick-list {
       overflow: hidden;
       padding-top: 7rem;
+      height: 100%;
 
-      .slick-slide {
-        float: left;
+      .slick-track {
+        height: 100%;
 
-        .beer-slide {
-          padding: 1rem 2rem;
+        .slick-slide {
+          float: left;
+          height: 100%;
 
-          .beer-slide-top {
-            display: grid;
-            grid-template-columns: 2fr 5fr;
-            grid-gap: 1rem;
-
-            .beer-slide-header {
-              text-align: center;
-              place-self: center;
-
-              .beer-slide-name {
-                font-family: $header-font;
-                font-weight: $black;
-                font-size: 1.5rem;
-                text-transform: uppercase;
-                margin: 0 0 0.3rem 0;
-              }
-
-              .beer-slide-alc {
-                font-family: $body-font;
-                font-weight: $regular;
-                font-size: 0.9rem;
-                text-transform: uppercase;
-                margin: 0 0 0.7rem 0;
-              }
-
-              .beer-slide-price {
-                font-family: $header-font;
-                font-weight: $black;
-                margin: 0 0 0.7rem 0;
-              }
-
-              .button-amount {
-                width: 8rem;
-                padding: 0.5rem 0;
-                margin: 0 auto;
-              }
-            }
+          > * {
+            height: 100%;
           }
 
-          .beer-slide-bottom {
-            > * {
-              margin-block: 2rem;
+          .beer-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 2rem 3rem;
+            height: 100%;
+
+            .beer-slide-top {
+              padding: 0 1rem;
+
+              .beer-slide-top-display {
+                display: grid;
+                grid-template-columns: 2fr 5fr;
+                grid-gap: 1rem;
+
+                .beer-slide-header {
+                  text-align: center;
+                  place-self: center;
+
+                  .beer-slide-name {
+                    font-family: $header-font;
+                    font-weight: $black;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    margin: 0 0 0.3rem 0;
+                  }
+
+                  .beer-slide-alc {
+                    font-family: $body-font;
+                    font-weight: $regular;
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    margin: 0 0 0.7rem 0;
+                  }
+
+                  .beer-slide-price {
+                    font-family: $header-font;
+                    font-weight: $black;
+                    margin: 0 0 0.7rem 0;
+                  }
+
+                  .button-amount {
+                    width: 8rem;
+                    margin: 0 auto;
+                  }
+                }
+              }
+
+              .beer-slide-top-description {
+                > * {
+                  margin-block: 2rem;
+                }
+              }
+            }
+
+            .beer-slide-bottom {
+              .beer-slide-bottom-buttons {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-gap: 1rem;
+
+                button {
+                  padding: 0.5rem 1rem;
+                  margin: 0;
+
+                  img {
+                    width: 2rem;
+                  }
+                }
+              }
             }
           }
         }

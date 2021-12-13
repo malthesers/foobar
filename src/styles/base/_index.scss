@@ -2,18 +2,31 @@
 @import "typography";
 
 body {
+  position: relative;
   background-color: $primary-color;
   margin: 0;
-}
+  height: 100vh;
+  overflow-y: hidden;
 
-main {
-  position: relative;
-  padding-top: 7rem;
-  margin: 0 auto;
-  max-width: 1000px;
-  overflow: hidden;
-}
+  #root {
+    height: 100%;
 
-.slide-hidden {
-  transform: translateX(100%);
+    main {
+      position: relative;
+      padding-top: 7rem;
+      margin: 0 auto;
+      max-width: 1000px;
+      height: 100%;
+      overflow: hidden;
+
+      section {
+        height: 100%;
+        overflow-y: scroll;
+      }
+    }
+
+    .slide-hidden {
+      transform: translateX(100%);
+    }
+  }
 }

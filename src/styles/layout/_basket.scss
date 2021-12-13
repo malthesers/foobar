@@ -10,8 +10,7 @@
   transition-duration: 0.3s;
 
   .basket-inner {
-    padding-top: 7rem;
-    padding-inline: 2rem;
+    padding: 7rem 1.5rem 1.5rem;
 
     hr {
       border: none;
@@ -21,62 +20,74 @@
     }
 
     .basket-item {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      grid-gap: 1rem;
-
-      .basket-item-left {
+      .basket-top {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         grid-gap: 1rem;
 
-        .basket-item-image {
+        .basket-item-left {
           display: flex;
-          width: 5rem;
-          height: 5rem;
+          grid-gap: 1rem;
 
-          img {
-            height: 100%;
-            width: auto;
-            margin: 0 auto;
+          .basket-item-image {
+            display: flex;
+            width: 5rem;
+            height: 5rem;
+
+            img {
+              height: 100%;
+              width: auto;
+              margin: 0 auto;
+            }
+          }
+
+          .basket-item-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            grid-gap: 0.3rem;
+            place-self: center;
+
+            .basket-item-name {
+              font-family: $header-font;
+              font-weight: $black;
+              font-size: 1.3rem;
+              text-transform: uppercase;
+              margin: 0;
+            }
+
+            .basket-item-type {
+              font-family: $body-font;
+              font-weight: $regular;
+              font-size: 0.8rem;
+              margin: 0;
+            }
+
+            .basket-item-alc {
+              font-family: $body-font;
+              font-weight: $regular;
+              font-size: 0.8rem;
+              text-transform: uppercase;
+              margin: 0;
+            }
           }
         }
 
-        .basket-item-header {
+        .basket-item-right {
           display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          grid-gap: 0.3rem;
-          place-self: center;
+          align-items: center;
+        }
+      }
 
-          .basket-item-name {
-            font-family: $header-font;
-            font-weight: $black;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            margin: 0;
-          }
+      .basket-bottom {
+        margin-top: 1rem;
 
-          .basket-item-type {
-            font-family: $body-font;
-            font-weight: $regular;
-            font-size: 0.8rem;
-            margin: 0;
-          }
-
-          .basket-item-alc {
-            font-family: $body-font;
-            font-weight: $regular;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin: 0;
-          }
-
-          .button-amount {
-            width: 8rem;
-            padding: 0.5rem 0;
-            margin: 0 auto;
-          }
+        .button-amount {
+          min-width: 10rem;
+          padding: 0;
+          margin: 0 auto;
+          text-align: center;
         }
       }
     }

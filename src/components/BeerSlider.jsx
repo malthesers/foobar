@@ -69,10 +69,10 @@ export default function BeerSlider (props) {
     slideRef.current.slickGoTo(slideIndex);
   }, [slideIndex])
 
-  const mappedBeers = props.props.map(beer => <BeerItemSlide {...beer} basket={props.basket} setBasket={props.setBasket} key={beer.index} />)
+  const mappedBeers = props.props.map(beer => <BeerItemSlide {...beer} basket={props.basket} setBasket={props.setBasket} setSliderDisplay={props.setSliderDisplay} setBasketDisplay={props.setBasketDisplay} key={beer.index} />)
 
   return (
-    <section id="modal-slider" className="slide-hidden">
+    <section id="modal-slider" className={ props.sliderDisplay ? "" : "slide-hidden"}>
     <Slider {...settings} ref={slideRef}>
         {mappedBeers}
     </Slider>
