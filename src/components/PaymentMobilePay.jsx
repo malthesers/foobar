@@ -1,4 +1,9 @@
 export default function PaymentForm(props) {
+  
+  function preventFormSubmission(e) {
+    e.preventDefault();
+}
+
   return (
   <>
     <h3>Pay with MobilePay</h3>
@@ -6,7 +11,7 @@ export default function PaymentForm(props) {
       <h3>Enter your phone number</h3>
       <form>
         <label htmlFor="phone"></label>
-        <input type="tel" id="phone" name="phone" placeholder="12 34 56 78" pattern="[0-9]{8}" required/>
+        <input type="tel" id="phone" name="phone" placeholder="12 34 56 78" pattern="[0-9]{8}" required onSubmit={preventFormSubmission} />
       </form>
       <button onClick={() => props.setOrderDisplay(prevState => !prevState)}>Continue</button>
     </div>
