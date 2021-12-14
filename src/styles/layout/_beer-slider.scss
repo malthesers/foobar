@@ -98,14 +98,14 @@
           }
 
           .beer-slide {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0 2rem 3rem;
+            padding: 0 2rem 6rem;
             height: 100%;
+            width: 100%;
 
             .beer-slide-top {
-              padding: 0 1rem;
+              display: flex;
+              flex-direction: column;
+              height: 100%;
 
               .beer-slide-top-display {
                 display: grid;
@@ -145,14 +145,22 @@
                 }
               }
 
-              .beer-slide-top-description {
-                > * {
-                  margin-block: 2rem;
+              .beer-slide-top-description-container {
+                margin-top: 1rem;
+                overflow-y: auto;
+
+                .beer-slide-top-description {
+                  > * {
+                    margin-block: 1rem;
+                  }
                 }
               }
             }
 
             .beer-slide-bottom {
+              position: sticky;
+              width: 100%;
+
               .beer-slide-bottom-buttons {
                 display: grid;
                 grid-template-columns: auto 1fr;

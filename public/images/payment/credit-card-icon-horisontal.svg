@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="627" height="111.757" viewBox="0 0 627 111.757">
+  <g id="Group_438" data-name="Group 438" transform="translate(-92 -646)">
+    <g id="Group_437" data-name="Group 437" transform="translate(-57 -97)">
+      <path id="Path_209" data-name="Path 209" d="M12.772,0H201.561a12.772,12.772,0,0,1,12.772,12.772V98.984a12.772,12.772,0,0,1-12.772,12.772H12.772A12.772,12.772,0,0,1,0,98.984V12.772A12.772,12.772,0,0,1,12.772,0Z" transform="translate(149 743)" fill="#fff"/>
+      <rect id="Rectangle_501" data-name="Rectangle 501" width="214" height="26" transform="translate(149 767)" fill="#191919"/>
+      <rect id="Rectangle_502" data-name="Rectangle 502" width="43" height="27" rx="13.5" transform="translate(165 809)" fill="#191919"/>
+      <path id="Rectangle_502_-_Outline" data-name="Rectangle 502 - Outline" d="M13.5,1A12.5,12.5,0,0,0,4.661,22.339,12.418,12.418,0,0,0,13.5,26h16A12.5,12.5,0,0,0,38.339,4.661,12.418,12.418,0,0,0,29.5,1h-16m0-1h16a13.5,13.5,0,0,1,0,27h-16a13.5,13.5,0,0,1,0-27Z" transform="translate(165 809)" fill="#707070"/>
+    </g>
+    <text id="Credit_card" data-name="Credit card" transform="translate(337 730)" fill="#fff" font-size="76" font-family="Outfit-Regular, Outfit"><tspan x="0" y="0">Credit card</tspan></text>
+  </g>
+</svg>

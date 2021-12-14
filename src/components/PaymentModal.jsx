@@ -19,10 +19,10 @@ export default function PaymentForm (props) {
                     <h3>Choose a payment method</h3>
                     <div className="modal-payment-options">
                         <div className={`modal-payment-option ${activePayment === "mobile-pay" && "active-payment"}`} data-payment="mobile-pay" onClick={changePaymentMethod}>
-                            <img className="modal-payment-option-image" src="./images/payment/mobile-pay-icon.svg" alt="MobilePay payment icon" />
+                            <img className="modal-payment-option-image" src={`./images/payment/mobile-pay-icon-${activePayment === "" ? "vertical" : "horisontal"}.svg`} alt="MobilePay payment icon" />
                         </div>
                         <div className={`modal-payment-option ${activePayment === "credit-card" && "active-payment"}`} data-payment="credit-card" onClick={changePaymentMethod}>
-                            <img className="modal-payment-option-image" src="./images/payment/credit-card-icon.svg" alt="Credit card payment icon" />
+                            <img className="modal-payment-option-image" src={`./images/payment/credit-card-icon-${activePayment === "" ? "vertical" : "horisontal"}.svg`} alt="Credit card payment icon" />
                         </div>
                     </div>
                 </div>
