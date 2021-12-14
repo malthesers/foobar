@@ -3,7 +3,7 @@ import PaymentMobilePay from "./PaymentMobilePay";
 import PaymentCreditCard from "./PaymentCreditCard";
 
 export default function PaymentForm (props) {
-    const [activePayment, setActivePayment] = useState("mobile-pay");
+    const [activePayment, setActivePayment] = useState("");
 
     function changePaymentMethod (e) {
         const paymentMethod = e.currentTarget.dataset.payment;

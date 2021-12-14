@@ -11,20 +11,24 @@ header {
 
   > * {
     position: relative;
-    display: flex;
+    display: grid;
     cursor: pointer;
 
     img {
       width: 4rem;
     }
 
-    .icon-cart-length {
-      font-family: $header-font;
-      font-weight: $bold;
-      position: absolute;
-      left: 63%;
-      top: 30%;
-      transform: translateX(-50%);
+    &.icon-cart-container {
+      img {
+        place-self: center;
+      }
+
+      .icon-cart-length {
+        position: absolute;
+        font-family: $header-font;
+        font-weight: $bold;
+        place-self: center;
+      }
     }
   }
 }

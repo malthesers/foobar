@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Basket from "./components/Basket";
 import BeerContainer from "./components/BeerContainer";
 import BeerSlider from "./components/BeerSlider";
+import LoadingScreen from "./components/LoadingScreen";
 import OrderHandler from "./components/OrderHandler";
 
 function filterBeers(data) {
@@ -82,6 +83,7 @@ function App() {
   return (
     <>
       <Header orderDisplay={orderDisplay} basket={basket} basketDisplay={basketDisplay} setBasketDisplay={setBasketDisplay} />
+      <LoadingScreen />
       {isFetched && (
         <main>
           <BeerContainer props={beers} basket={basket} setBasket={setBasket} setSliderDisplay={setSliderDisplay} setSlideIndex={setSlideIndex} />

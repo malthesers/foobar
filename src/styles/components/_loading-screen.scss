@@ -1,0 +1,107 @@
+@import "./../abstracts/variables";
+
+#loading-screen {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: $primary-color;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+
+  &.loading-hidden {
+    transform: translateX(-100%);
+  }
+}
+
+svg {
+  transform: scale(0.3);
+}
+
+.cls-gul {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+    fill: #ffd750;
+  }
+}
+
+.cls-kop {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash_kop 5s linear forwards;
+}
+
+@keyframes dash_kop {
+  to {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+}
+
+.cls-f {
+  animation: f 1s linear forwards;
+}
+
+@keyframes f {
+  0% {
+    transform: scale(0);
+    opacity: 0%;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    fill: #ffffff;
+    transform: scale(1);
+  }
+}
+
+.cls-stort-o {
+  animation: stort-o 1s linear forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes stort-o {
+  0% {
+    transform: scale(0);
+    opacity: 0%;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    fill: #ffffff;
+    transform: scale(1);
+  }
+}
+
+.cls-lille-o {
+  animation: lille-o 1s linear forwards;
+  animation-delay: 1s;
+}
+
+@keyframes lille-o {
+  0% {
+    transform: scale(0);
+    opacity: 0%;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    fill: #ffffff;
+    transform: scale(1);
+  }
+}

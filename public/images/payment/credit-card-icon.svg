@@ -1,12 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="537" height="416" viewBox="0 0 537 416">
   <g id="Group_438" data-name="Group 438" transform="translate(-92 -646)">
     <g id="Group_437" data-name="Group 437" transform="translate(-57 -97)">
-      <g id="Rectangle_500" data-name="Rectangle 500" transform="translate(149 743)" fill="#fff" stroke="#191919" stroke-width="10">
-        <rect width="537" height="280" rx="32" stroke="none"/>
-        <rect x="5" y="5" width="527" height="270" rx="27" fill="none"/>
-      </g>
+      <path id="Path_209" data-name="Path 209" d="M32,0H505a32,32,0,0,1,32,32V248a32,32,0,0,1-32,32H32A32,32,0,0,1,0,248V32A32,32,0,0,1,32,0Z" transform="translate(149 743)" fill="#fff"/>
       <rect id="Rectangle_501" data-name="Rectangle 501" width="537" height="67" transform="translate(149 802)" fill="#191919"/>
       <rect id="Rectangle_502" data-name="Rectangle 502" width="106" height="67" rx="16" transform="translate(190 909)" fill="#191919"/>
+      <path id="Rectangle_502_-_Outline" data-name="Rectangle 502 - Outline" d="M16,1A15,15,0,0,0,1,16V51A15,15,0,0,0,16,66H90a15,15,0,0,0,15-15V16A15,15,0,0,0,90,1H16m0-1H90a16,16,0,0,1,16,16V51A16,16,0,0,1,90,67H16A16,16,0,0,1,0,51V16A16,16,0,0,1,16,0Z" transform="translate(190 909)" fill="#707070"/>
     </g>
     <text id="Credit_card" data-name="Credit card" transform="translate(170 1042)" fill="#fff" font-size="76" font-family="Outfit-Regular, Outfit"><tspan x="0" y="0">Credit card</tspan></text>
   </g>
