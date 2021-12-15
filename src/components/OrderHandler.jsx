@@ -6,11 +6,55 @@ export default function OrderHandler (props) {
     //Random queue number
     const orderNumber = Math.floor(Math.random() * 50 + 20);
 
-    function completeOrder () {
-        if (orderState === "loading") {
-            setOrderState("complete");
+    // function completeOrder () {
+    //     if (orderState === "loading") {
+    //         setOrderState("complete");
                 
-            const filteredOrders = props.basket.filter(beer => {
+    //         const filteredOrders = props.basket.filter(beer => {
+    //             if (beer.amount > 0) {
+    //                 return true
+    //             } else {
+    //                 return false
+    //             }
+    //         })
+    
+    //         const mappedOrders = filteredOrders.map(beer => {
+    //             if (beer.amount > 0) {
+    //                 const orderedBeer = {
+    //                     name: beer.name,
+    //                     amount: beer.amount
+    //                 }
+    
+    //                 return orderedBeer;
+    //             }
+    
+    //             return null;
+    //         })
+    
+    //         console.log(mappedOrders);
+
+    //         if (mappedOrders.length !== 0) {
+    //             const order = JSON.stringify(mappedOrders);
+    
+    //             fetch("https://group-7-foo-bar.herokuapp.com/order", {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Accept': 'application/json',
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: order,
+    //             })
+    //         }
+
+    //     }
+    // }
+
+    useEffect(() => {
+        console.log("yo1")
+        setTimeout(() => {
+            setOrderState("complete");
+
+                        const filteredOrders = props.basket.filter(beer => {
                 if (beer.amount > 0) {
                     return true
                 } else {
@@ -46,14 +90,9 @@ export default function OrderHandler (props) {
                 })
             }
 
-        }
-    }
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            completeOrder();
+            console.log("yo2");
         }, 5000)
-    }, [])
+    }, [props.basket])
 
     function resetApp () {
         window.location.reload();
