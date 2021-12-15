@@ -97,7 +97,7 @@ function App() {
             slideIndex={slideIndex}
           />
           <Basket basketDisplay={basketDisplay} basket={basket} setBasket={setBasket} setOrderDisplay={setOrderDisplay} />
-          {orderDisplay && <OrderHandler orderDisplay={orderDisplay} setOrderDisplay={setOrderDisplay} />}
+          {orderDisplay && <OrderHandler basket={basket} orderDisplay={orderDisplay} setOrderDisplay={setOrderDisplay} />}
         </main>
       )}
     </>

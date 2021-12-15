@@ -11,6 +11,16 @@ export default function PaymentForm (props) {
         setActivePayment(paymentMethod);
     }
     
+    function validateForm () {
+      const form = document.querySelector("#form-credit-card");
+
+      form.classList.add("submitted");
+  
+      if (form.checkValidity()) {
+        props.setOrderDisplay(prevState => !prevState)
+      }
+    }
+    
 
     return (
         <div id="modal-payment" className={`basket-inner ${props.paymentDisplay ? "" : "slide-hidden"}`}>
@@ -34,7 +44,7 @@ export default function PaymentForm (props) {
             </div>
             <div className="modal-payment-buttons">
                 <button onClick={ () => {props.setPaymentDisplay(prevState => !prevState)}}><img src="./images/icons/icon-return.svg" alt="Foobar return to beer grid icon" /></button>
-                { activePayment === "credit-card" && <button className="continue-button" onClick={() => props.setOrderDisplay(prevState => !prevState)}>Continue</button>}
+                { activePayment === "credit-card" && <button className="continue-button" onClick={validateForm}>Continue</button>}
             </div>
         </div>
     )
