@@ -45,7 +45,7 @@ export default function Basket (props) {
                         <h4>Total</h4>
                         <p>{totalPrice} DKK</p>
                     </div>
-                    <button onClick={togglePaymentModal}>Proceed</button>
+                    <button onClick={togglePaymentModal} className={totalPrice === 0 ? "proceed-locked" : ""} >Proceed</button>
                 </div>
             </div>
             <PaymentModal paymentDisplay={paymentDisplay} setPaymentDisplay={setPaymentDisplay} setOrderDisplay={props.setOrderDisplay} />

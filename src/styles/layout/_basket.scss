@@ -107,6 +107,11 @@
         background-color: $secondary-color;
         color: $primary-color;
         width: 100%;
+
+        &.proceed-locked {
+          filter: brightness(0.5);
+          pointer-events: none;
+        }
       }
     }
   }
