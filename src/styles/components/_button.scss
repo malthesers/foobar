@@ -19,7 +19,7 @@ button {
   color: $primary-color;
 }
 
-button:hover {
+button:not(.button-sold-out):active {
   color: $primary-color;
   background-color: $secondary-color;
   transition-duration: 0.3s;
