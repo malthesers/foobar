@@ -15,18 +15,18 @@ export default function BeerItemSlide (props) {
                 </div>
                 <div className="beer-slide-top-description-container">
                     <div className="beer-slide-top-description">
-                        {/* <div className="beer-slide-aroma">
+                        <div className="beer-slide-aroma">
                         <h4>Aroma</h4>
                         <p>{props.description.aroma}</p>
-                        </div> */}
+                        </div>
                         <div className="beer-slide-appearance">
                             <h4>Appearance</h4>
                             <p>{props.description.appearance}</p>
                         </div>
-                        {/* <div className="beer-slide-mouthfeel">
+                        <div className="beer-slide-mouthfeel">
                             <h4>Mouthfeel</h4>
                             <p>{props.description.mouthfeel}</p>
-                        </div> */}
+                        </div>
                         <div className="beer-slide-overall">
                             <h4>Overall Impression</h4>
                             <p>{props.description.overallImpression}</p>
