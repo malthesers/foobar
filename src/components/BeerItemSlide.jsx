@@ -10,7 +10,7 @@ export default function BeerItemSlide (props) {
                         <h3 className="beer-slide-name">{props.name}</h3>
                         <p className="beer-slide-alc">{props.category} - {props.alc}%</p>
                         <p className="beer-slide-price">{props.price} DKK</p>
-                        <ButtonAmount name={props.name} index={props.index} basket={props.basket} setBasket={props.setBasket} />
+                        <ButtonAmount name={props.name} available={props.available} index={props.index} basket={props.basket} setBasket={props.setBasket} />
                     </div>
                 </div>
                 <div className="beer-slide-top-description-container">

@@ -21,7 +21,7 @@ export default function BeerItemBasket (props) {
                         </div>
                     </div>
                     <div className="basket-bottom">
-                        <ButtonAmount name={props.name} index={props.index} basket={props.basket} setBasket={props.setBasket} />
+                        <ButtonAmount name={props.name} available={props.available} index={props.index} basket={props.basket} setBasket={props.setBasket} />
                     </div>
                 </article>
                 <hr />

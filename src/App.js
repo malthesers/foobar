@@ -84,6 +84,7 @@ function App() {
               alc: item.alc,
               label: item.label,
               price: item.price,
+              available: item.available,
               amount: 0,
             };
 
