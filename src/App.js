@@ -33,51 +33,67 @@ function App() {
   let isFetched = basket.length === 7;
 
   useEffect(() => {
-    fetch("https://group-7-foo-bar.herokuapp.com/beertypes")
-      .then((res) => res.json())
-      .then((data) => {
-        //Filter beers
-        const filteredBeers = filterBeers(data);
+    function getTaps() {
+      fetch("https://group-7-foo-bar.herokuapp.com/")
+        .then((res) => res.json())
+        .then((data) => getBeerTypes(data.taps.map((tap) => tap.beer)));
+    }
 
-        //Variable to index beers
-        let beerIndex = 0;
+    getTaps();
 
-        //Add price to beers
-        const pricedBeers = filteredBeers.map((beer) => {
-          //Generate a random multiple of 5 from 50 to 80
-          const rngPrice = Math.floor(Math.random() * 7) * 5 + 50;
+    function getBeerTypes(taps) {
+      fetch("https://group-7-foo-bar.herokuapp.com/beertypes")
+        .then((res) => res.json())
+        .then((data) => {
+          //Filter beers
+          const filteredBeers = filterBeers(data);
 
-          //Add price property and value to beer
-          beer.price = rngPrice;
+          //Variable to index beers
+          let beerIndex = 0;
 
-          //Set and increment beerIndex
-          beer.index = beerIndex;
-          beerIndex++;
+          //Add price to beers
+          const pricedBeers = filteredBeers.map((beer) => {
+            //Generate a random multiple of 5 from 50 to 80
+            const rngPrice = Math.floor(Math.random() * 7) * 5 + 50;
 
-          //Add beer to new array
-          return beer;
+            //Replace png file extension with webp
+            beer.label = beer.label.replace(".png", ".webp");
+
+            //Add price property and value to beer
+            beer.price = rngPrice;
+
+            //Add availability property based on server selection
+            beer.available = taps.includes(beer.name);
+
+            //Set and increment beerIndex
+            beer.index = beerIndex;
+            beerIndex++;
+
+            //Add beer to new array
+            return beer;
+          });
+
+          //Set reformatted beers as state
+          setBeers(pricedBeers);
+          //Create basket template
+          const filteredBasket = pricedBeers.map((item) => {
+            const basketItem = {
+              index: item.index,
+              name: item.name,
+              category: item.category,
+              alc: item.alc,
+              label: item.label,
+              price: item.price,
+              amount: 0,
+            };
+
+            return basketItem;
+          });
+
+          //Set basket as state
+          setBasket(filteredBasket);
         });
-
-        //Set reformatted beers as state
-        setBeers(pricedBeers);
-        //Create basket template
-        const filteredBasket = pricedBeers.map((item) => {
-          const basketItem = {
-            index: item.index,
-            name: item.name,
-            category: item.category,
-            alc: item.alc,
-            label: item.label,
-            price: item.price,
-            amount: 0,
-          };
-
-          return basketItem;
-        });
-
-        //Set basket as state
-        setBasket(filteredBasket);
-      });
+    }
   }, []);
 
   return (

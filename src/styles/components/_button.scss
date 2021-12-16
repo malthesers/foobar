@@ -34,3 +34,8 @@ button {
     padding: 1rem;
   }
 }
+
+.button-sold-out {
+  filter: brightness(0.5);
+  cursor: auto;
+}

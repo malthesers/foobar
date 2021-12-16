@@ -23,10 +23,13 @@ export default function ButtonAmount (props) {
     }
 
     return (
-        <button className="button-amount">
-            <span onClick={updateAmount} data-cart="decrement">-</span>
-            <span>{ beerItem.amount }</span>
-            <span onClick={updateAmount} data-cart="increment">+</span>
-        </button>
+        <>
+            { props.available && <button className="button-amount">
+                <span onClick={updateAmount} data-cart="decrement">-</span>
+                <span>{ beerItem.amount }</span>
+                <span onClick={updateAmount} data-cart="increment">+</span>
+            </button>}
+            { props.available === false && <button className="button-sold-out">Sold Out</button>}
+        </>
     )
 }

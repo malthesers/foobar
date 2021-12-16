@@ -36,8 +36,8 @@ export default function BeerItemSlide (props) {
             </div>
             <div className="beer-slide-bottom">
                 <div className="beer-slide-bottom-buttons">
-                    <button onClick={ () => {props.setSliderDisplay(prevState => !prevState)}}><img src="./images/icons/icon-return.svg" alt="Foobar return to beer grid icon" /></button>
-                    <button onClick={ () => {props.setBasketDisplay(prevState => !prevState)}}className="button-fill">Checkout</button>
+                    <button tabIndex={-1} onClick={ () => {props.setSliderDisplay(prevState => !prevState)}}><img src="./images/icons/icon-return.svg" alt="Foobar return to beer grid icon" /></button>
+                    <button tabIndex={-1} onClick={ () => {props.setBasketDisplay(prevState => !prevState)}}className="button-fill">Checkout</button>
                 </div>
             </div>
         </article>
