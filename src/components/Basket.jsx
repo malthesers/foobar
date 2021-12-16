@@ -5,7 +5,6 @@ import PaymentModal from "./PaymentModal";
 
 export default function Basket (props) {
     const mappedBeers = props.basket.map(beer => <BeerItemBasket {...beer} basket={props.basket} setBasket={props.setBasket} key={beer.index}/>)
-    console.log(mappedBeers)
     const [paymentDisplay, setPaymentDisplay] = useState(false);
     const [tip, setTip] = useState(0);
     let basketItems = 0;
