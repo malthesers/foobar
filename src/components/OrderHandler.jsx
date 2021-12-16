@@ -112,6 +112,7 @@ export default function OrderHandler (props) {
                         <img src="./images/payment/thanks-mate-message.svg" alt="Foobar thanks mate message" />
                         <h3>Your order number is:</h3>
                         <h1>{orderNumber}</h1>
+                        <h3>The bartender will call your order number when ready</h3>
                     </div>}
                 </div>
                 { orderState === "complete" && <button onClick={resetApp}>New order</button>}
