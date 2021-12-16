@@ -1,4 +1,4 @@
-export default function PaymentForm() {
+export default function PaymentCreditCard() {
 
     function preventFormSubmission(e) {
         e.preventDefault();

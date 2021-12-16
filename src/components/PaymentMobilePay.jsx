@@ -1,4 +1,4 @@
-export default function PaymentForm(props) {
+export default function PaymentMobilePay(props) {
   
   function preventFormSubmission(e) {
     e.preventDefault();

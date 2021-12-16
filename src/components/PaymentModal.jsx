@@ -2,7 +2,7 @@ import { useState } from "react";
 import PaymentMobilePay from "./PaymentMobilePay";
 import PaymentCreditCard from "./PaymentCreditCard";
 
-export default function PaymentForm (props) {
+export default function PaymentModal (props) {
     const [activePayment, setActivePayment] = useState("");
 
     function changePaymentMethod (e) {
