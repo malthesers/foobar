@@ -22,36 +22,6 @@ function CustomNextArrow(props) {
     );
 }
 
-// class SimpleSlider extends Component {
-//   render() {
-//     const settings = {
-//       dots: true,
-//       infinite: true,
-//       speed: 500,
-//       slidesToShow: 1,
-//       slidesToScroll: 1,
-//       prevArrow: <CustomPrevArrow />,
-//       nextArrow: <CustomNextArrow />
-//     };
-
-//     const mappedBeers = this.props.props.props.map(beer => <BeerItemSlide {...beer} key={beer.name} />)
-
-//     return (
-//       <section id="section-slider" className="slide-hidden">
-//         <Slider {...settings}>
-//             {mappedBeers}
-//         </Slider>
-//       </section>
-//     );
-//   }
-// }
-
-// export default function BeerSlider (props) {
-//   return (
-//     <SimpleSlider props={props} />
-//   )
-// }
-
 export default function BeerSlider (props) {
   const slideIndex = props.slideIndex;
   const slideRef = useRef();
